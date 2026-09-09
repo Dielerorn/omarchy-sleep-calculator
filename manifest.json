@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "dielerorn.sleep-calculator",
+  "name": "Sleep Calculator",
+  "version": "1.0.0",
+  "author": "Austin Larson",
+  "license": "MIT",
+  "repository": "https://github.com/Dielerorn/omarchy-sleep-calculator",
+  "description": "What time to go to sleep to be up at a set time, or what time to get up if you go to bed now \u2014 the arithmetic sleepcalculator.com does",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Sleep Calculator",
+    "description": "Bedtimes and wake-up times on 90-minute sleep cycles",
+    "category": "Time",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "wakeTime": "07:00",
+      "mode": "bedtime",
+      "panelWidth": 300
+    },
+    "schema": [
+      {
+        "key": "wakeTime",
+        "type": "string",
+        "label": "Wake time",
+        "defaultValue": "07:00",
+        "description": "The time the bedtime list counts back from, as 24-hour HH:MM. Set from the panel itself; this is where the panel keeps it, so a wake time you set once is the one it opens with tomorrow night."
+      },
+      {
+        "key": "mode",
+        "type": "enum",
+        "label": "Opens showing",
+        "options": [
+          "bedtime",
+          "wakeup"
+        ],
+        "defaultValue": "bedtime",
+        "description": "Which of the two questions the panel is on when it opens. Bedtime counts back from the wake time above; wakeup counts forward from right now. Also follows whichever mode you last left it in."
+      },
+      {
+        "key": "panelWidth",
+        "type": "integer",
+        "label": "Panel width",
+        "min": 240,
+        "max": 600,
+        "step": 10,
+        "defaultValue": 300,
+        "description": "In the shell's spacing units. Wider than the screen is trimmed to fit."
+      }
+    ]
+  }
+}
