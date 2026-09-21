@@ -97,6 +97,17 @@ Then put it wherever you want it in the bar:
 
     omarchy bar move dielerorn.sleep-calculator --section right
 
+It needs nothing beyond the Omarchy shell itself: no packages, no helper
+scripts, no network access. The only thing it writes is its own `wakeTime` and
+`mode` settings, in its own widget entry in `~/.config/omarchy/shell.json`.
+
+## Remove
+
+    omarchy plugin remove dielerorn.sleep-calculator
+
+That disables the widget and deletes the plugin folder. If you
+added the key binding above, delete that line from `bindings.lua` too.
+
 ## Files
 
     manifest.json   plugin declaration and settings schema
